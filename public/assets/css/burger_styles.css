@@ -1,22 +1,28 @@
 .jumbotron {
-    background-image: url("../img/burgerpic2.png");
+    background-image: url("../img/travel_art_1_400px.png");
     background-repeat: no-repeat;
     background-position: right;
-    background-color: #000000;
+    background-color: #50aba5;
     color: #ffffff;
     margin-top: 3%;
+  }
+  #addburger {
+    background-color: #de521f;
+  }
+  .trashburger {
+    background-color: #268c7d;
   }
   #newburger {
     color: #5c5c5c;
   }
   #leftside {
-    background-color: #5c5c5c;
+    background-color: #30627d;
     color: white;
     text-align: center;
     font-size: 1.3em;
   }
   #rightside {
-    background-color: #e49322;
+    background-color: #de521f;
     color: white;
     text-align: center;
     font-size: 1.3em;
