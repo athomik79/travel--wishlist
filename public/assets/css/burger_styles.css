@@ -6,8 +6,20 @@
     color: #ffffff;
     margin-top: 3%;
   }
-  #addburger {
+  #map {
+    height: 500px;
+  }
+  #find {
     background-color: #de521f;
+    color: #ffffff;
+  }
+  #search {
+    background-color: #30627d;
+    color: #ffffff;
+  }
+  #wish {
+    background-color: #f0ad4e;
+    color: #ffffff;
   }
   .trashburger {
     background-color: #268c7d;

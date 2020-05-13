@@ -8,12 +8,19 @@
             <form class="create-form">
                 <div class="form-group">
                   {{!-- <label for="newburger">Choose a Destination</label> --}}
-                  <input data-placeholder="Search a Destination" id="newburger" name="burger">
-                  <button type="submit" class="btn" id="addburger">
-                      <span class="fas fa-map-marked-alt"></span>
+                  <input data-placeholder="Search a Destination" id="search_term" name="burger">
+                  <button type="submit" class="btn" id="find">
+                      <span class="fas fa-map-marker-alt">My Location</span>
+                  </button>
+                  <button type="submit" class="btn" id="search">
+                      <span class="fas fa-search">Search</span>
+                  </button>
+                  <button type="submit" class="btn" id="wish">
+                      <span class="fas fa-map-marked-alt">Wishlist</span>
                   </button>
                 </div>
             </form>
+            <div id="map">Location Map</div>
         </panel>
     </div>
     <div class="row">
