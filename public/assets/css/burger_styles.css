@@ -13,7 +13,7 @@
     background-color: #de521f;
     color: #ffffff;
   }
-  #search {
+  #run-search {
     background-color: #30627d;
     color: #ffffff;
   }
@@ -21,7 +21,7 @@
     background-color: #f0ad4e;
     color: #ffffff;
   }
-  .trashburger {
+  #clear-all {
     background-color: #268c7d;
   }
   #newburger {

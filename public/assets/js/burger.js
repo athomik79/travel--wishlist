@@ -1,56 +1,48 @@
+const locationForm = document.querySelector('location-form');
 
-function activatePlacesSearch(){
-  var input = document.getElementById('search_term');
-  var autocomplete = new google.maps.places.Autocomplete(input);
-}
-
-$("#find").click(function()
-    {initMap()});
-
-    function initMap () {
-    let location = new Object();
-    navigator.geolocation.getCurrentPosition(function(pos) 
-    {
-    
-        location.lat = pos.coords.latitude;
-        gLat = location.lat;
-        location.long = pos.coords.longitude;
-        gLong = location.long;
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: location.lat, lng: location.long },
-            zoom: 16,
-        });
-        currentLat = location.lat;
-        localStorage.setItem("lat",currentLat);
-        currentLong = location.long;
-        localStorage.setItem("lon",currentLong);
-        let currentLocation = { lat: location.lat, lng: location.long };
-        let marker = new google.maps.Marker({
-        position: currentLocation,
-        map: map
-        });
-
-        google.maps.event.addListener(search, 'places_changed', function() {
-        document.getElementById("destination").onclick = function () {
-        var input = document.getElementById("search");
-
-        google.maps.event.trigger(input, "focus", {});
-        google.maps.event.trigger(input, "keydown", { keyCode: 13 });
-        google.maps.event.trigger(this, "focus", {});
-    }
-    });   
-    });
-}
-
+// Event Listener
 $(function() {
-  $("#newburger").on("keyup", function(event) {
+  $("#run-search").on("click", function(event) {
     event.preventDefault();
 
-    const searchBar = document.querySelector('#newburger').addEventListener
-    console.log(searchBar);
+  const location = document.querySelector('#search-term').value;
+
+    console.log(location);
     console.log(event.target.value);
+    })
+
+  $.ajax({
+    type: "GET",
+    url: "https://www.triposo.com/api/20200405/location.json?location=${location}&account=JEM7ZTLR&fields=id,name,parent_id,country_id,snippet,coordinates,images&token=koerzthbb52l98zhhsdxhuovxhoouzi7"+location+"&callback=?",
+    dataType: 'JSON',
+    success: function(data){
+        console.log(data);
+    }
   })
-  });
+});
+
+// // Fetch Location From API
+// function fetchLocation(e) {
+//   e.preventDefault();
+
+//   // Get User Input
+//   const location = document.querySelector('search-term').value;
+  
+//   // Fetch Location
+//   fetch(`https://www.triposo.com/api/20200405/location.json?location=${location}&account=JEM7ZTLR&fields=id,name,parent_id,country_id,snippet,coordinates,images&token=koerzthbb52l98zhhsdxhuovxhoouzi7&callback=callback`, {
+//     jsonCallbackFunction: 'callback'
+//   })
+//     //  Map Promise Response to json
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+// }
+
+// Autocomplete Search Function
+function activatePlacesSearch(){
+  var input = document.getElementById('search-term');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  }
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
@@ -60,7 +52,7 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#search_term")
+      burger_name: $("#search-term")
         .val()
         .trim(),
       devoured: 0

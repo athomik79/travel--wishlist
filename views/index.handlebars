@@ -5,23 +5,24 @@
         <p class="lead">Search for Destinations.</p>
          <p class="lead">Add them to your Wishlist or Travel Journal.</p>
         <panel>
-            <form class="create-form">
+            <form id="location-form" class="create-form">
                 <div class="form-group">
                   {{!-- <label for="newburger">Choose a Destination</label> --}}
-                  <input data-placeholder="Search a Destination" id="search_term" name="burger">
-                  <button type="submit" class="btn" id="find">
+                  <input type="text" id="search-term" class="form-control mt-3" data-placeholder="Search a Destination" name="burger">
+                  {{!-- <button type="submit" class="btn" id="find">
                       <span class="fas fa-map-marker-alt">My Location</span>
-                  </button>
-                  <button type="submit" class="btn" id="search">
+                  </button> --}}
+                  <button type="submit" class="btn mt-3" id="run-search">
                       <span class="fas fa-search">Search</span>
                   </button>
-                  <button type="submit" class="btn" id="wish">
+                  <button type="submit" class="btn mt-3" id="wish">
                       <span class="fas fa-map-marked-alt">Wishlist</span>
                   </button>
                 </div>
             </form>
-            <div id="map">Location Map</div>
+            {{!-- <div id="map">Location Map</div> --}}
         </panel>
+    <div id="location-section"></div>
     </div>
     <div class="row">
         <div class="col-sm-6">
@@ -59,7 +60,7 @@
                         {{#each burgers}}
                         {{#if devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="trashburger btn" id="trashbutton" data-id="{{this.id}}"
+                        <button type="button" class="trashburger btn" id="clear-all" data-id="{{this.id}}"
                             data-newDevoured="{{devour}}"><span class="fas fa-suitcase"></span></button>
                         <hr>
                         {{/if}}
