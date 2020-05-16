@@ -1,4 +1,5 @@
 .jumbotron {
+<<<<<<< HEAD
   background-image: url("../img/travel_art_1_400px.png");
   background-repeat: no-repeat;
   background-position: right;
@@ -39,3 +40,45 @@
   text-align: center;
   font-size: 1.3em;
 }
+=======
+    background-image: url("../img/travel_art_1_400px.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #50aba5;
+    color: #ffffff;
+    margin-top: 3%;
+  }
+  #map {
+    height: 500px;
+  }
+  #find {
+    background-color: #de521f;
+    color: #ffffff;
+  }
+  #search {
+    background-color: #30627d;
+    color: #ffffff;
+  }
+  #wish {
+    background-color: #f0ad4e;
+    color: #ffffff;
+  }
+  .trashburger {
+    background-color: #268c7d;
+  }
+  #newburger {
+    color: #5c5c5c;
+  }
+  #leftside {
+    background-color: #30627d;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  #rightside {
+    background-color: #de521f;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+  }
+>>>>>>> fea1b71c6ae173bf66f9d8fb7752d04c3cd7876a

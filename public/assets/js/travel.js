@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function activatePlacesSearch(){
   var input = document.getElementById('search_term');
   var autocomplete = new google.maps.places.Autocomplete(input);
@@ -151,33 +152,28 @@ $(function() {
 //     let location = new Object();
 //     navigator.geolocation.getCurrentPosition(function(pos) 
 //     {
+=======
+// var APIKey = "koerzthbb52l98zhhsdxhuovxhoouzi7";
+// var queryURL = "https://www.triposo.com/api/20200405///api/20200405/location.json?fields=id,parent_id,coordinates,score,country_id,type,intro,content,images,attribution,properties,tags,tag_labels,structured_content,public_transport_maps,name,snippet,names,musement_locations,climate,part_of,intro_language_info,structured_content_language_info,snippet_language_info" + "&units=I&key=" + APIKey;
+
+const newburger = document.getElementById('newburger');
+
+console.log(newburger);
+newburger.addEventListener('keyup', (e) => {
+    console.log(e);
+});
+
+    // // Send the Get request.
+    // $.ajax({
+    //   url: queryURL,
+    //   method: "GET"
+    // }).then(function(response){
+    //   for (var i=0; i<10; i++)
+>>>>>>> fea1b71c6ae173bf66f9d8fb7752d04c3cd7876a
     
-//         location.lat = pos.coords.latitude;
-//         gLat = location.lat;
-//         location.long = pos.coords.longitude;
-//         gLong = location.long;
-//         map = new google.maps.Map(document.getElementById("map"), {
-//             center: { lat: location.lat, lng: location.long },
-//             zoom: 16,
-//         });
-//         currentLat = location.lat;
-//         localStorage.setItem("lat",currentLat);
-//         currentLong = location.long;
-//         localStorage.setItem("lon",currentLong);
-//         let currentLocation = { lat: location.lat, lng: location.long };
-//         let marker = new google.maps.Marker({
-//         position: currentLocation,
-//         map: map
-//         });
-
-//         google.maps.event.addListener(search, 'places_changed', function() {
-//         document.getElementById("destination").onclick = function () {
-//         var input = document.getElementById("search");
-
-//         google.maps.event.trigger(input, "focus", {});
-//         google.maps.event.trigger(input, "keydown", { keyCode: 13 });
-//         google.maps.event.trigger(this, "focus", {});
-//     }
-//     });   
-//     });
-// }
+    // {
+    //   var id = response.result.data[i].location_id
+    //   var idDiv = "<div id=\"id"+i+"\">"+ id + "</div>";
+    //       $('#addburger').append(idDiv);
+    // }
+    //     },

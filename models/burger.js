@@ -1,5 +1,7 @@
 var orm = require("../config/orm.js");
 
+
+
 // Call back orms
 var burger = {
  selectAll: function(cb) {
