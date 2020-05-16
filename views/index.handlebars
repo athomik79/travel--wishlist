@@ -5,25 +5,40 @@
         <p class="lead">Search for Destinations.</p>
          <p class="lead">Add them to your Wishlist or Travel Journal.</p>
         <panel>
-            <form id="location-form" class="create-form">
+            <form class="create-form">
                 <div class="form-group">
                   {{!-- <label for="newburger">Choose a Destination</label> --}}
-                  <input type="text" id="search-term" class="form-control mt-3" data-placeholder="Search a Destination" name="burger">
-                  {{!-- <button type="submit" class="btn" id="find">
+                  <input data-placeholder="Search a Destination" id="search_term" name="burger">
+                  <button type="submit" class="btn" id="find">
                       <span class="fas fa-map-marker-alt">My Location</span>
-                  </button> --}}
-                  <button type="submit" class="btn mt-3" id="run-search">
+                  </button>
+                  <button type="button" class="btn" id="search">
                       <span class="fas fa-search">Search</span>
                   </button>
-                  <button type="submit" class="btn mt-3" id="wish">
+                  <button type="submit" class="btn" id="wish">
                       <span class="fas fa-map-marked-alt">Wishlist</span>
                   </button>
                 </div>
             </form>
             {{!-- <div id="map">Location Map</div> --}}
         </panel>
-    <div id="location-section"></div>
     </div>
+
+<div id="results" class="hide">
+            <div class="jumbotron" id="infoDiv">
+                <h2>Get to know more about where you're traveling to</h2>
+            </div>
+        <div class="card">
+          <!-- card Heading for the retrieved articles box -->
+          <div class="card-header">
+            <strong><i class="fa fa-table"></i> Location Overview</strong>
+          </div>
+        </div>
+          <!-- This main card will hold each of the resulting articles -->
+          <div class="card-body" id="location-section">
+          </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-6">
             <div class="card card-default">
@@ -60,7 +75,7 @@
                         {{#each burgers}}
                         {{#if devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="trashburger btn" id="clear-all" data-id="{{this.id}}"
+                        <button type="button" class="trashburger btn" id="trashbutton" data-id="{{this.id}}"
                             data-newDevoured="{{devour}}"><span class="fas fa-suitcase"></span></button>
                         <hr>
                         {{/if}}
