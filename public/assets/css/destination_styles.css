@@ -1,40 +1,48 @@
 .jumbotron {
-  background-image: url("../img/travel_art_1_400px.png");
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-position: right;
-  background-color: #50aba5;
+  background-color: white;
   color: #ffffff;
   margin-top: 3%;
 }
-#map {
-  height: 500px;
+.info {
+  /* background-image: url("../img/background.jpg");
+  background-repeat: no-repeat; */
+  background-position: right;
+  /* background-color: #439dbd; */
+  color: dimgray;
+  margin-top: 3%;
 }
+/* #map {
+  height: 500px;
+} */
 #find {
   background-color: #de521f;
   color: #ffffff;
 }
 #search {
-  background-color: #30627d;
+  background-color: #439dbd;
   color: #ffffff;
 }
 #wish {
-  background-color: #f0ad4e;
+  background-color: #273f22;
   color: #ffffff;
 }
 #destinationbtn {
-  background-color: #268c7d;
+  background-color: lightgray;
 }
 #trashbutton{
-  background-color: #f0ad4e;
+  background-color: lightgray;
 }
 #leftside {
-  background-color: #30627d;
+  background-color: #225972;
   color: white;
   text-align: center;
   font-size: 1.3em;
 }
 #rightside {
-  background-color: #de521f;
+  background-color: #ec7a4b;
   color: white;
   text-align: center;
   font-size: 1.3em;

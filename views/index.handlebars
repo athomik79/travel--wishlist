@@ -1,51 +1,53 @@
 <div class="container">
-    
+
     <div class="jumbotron">
-        <h1 class="display-3">Travel Wishlist</h1>
-        <p class="lead">Search for Destinations.</p>
-         <p class="lead">Add them to your Wishlist or Travel Journal.</p>
+        <h1 class="display-3"><strong>TRAVEL WISHLIST</strong></h1>
+        <p class="lead">Search for Destinations.
+        <br>
+        Add them to your Wishlist or Travel Journal.</p>
         <panel>
             <form class="create-form">
                 <div class="form-group">
-                  <label for="newdestination">Choose a Destination</label>
-                  <input data-placeholder="Search a Destination" id="search_term" class="form-control mt-3" name="destination">
-                  {{!-- <button type="submit" class="btn" id="find">
+                    {{!-- <label for="newdestination">Choose a Destination</label> --}}
+                    <input data-placeholder="Search a Destination" id="search_term" class="form-control mt-3"
+                        name="destination">
+                    {{!-- <button type="submit" class="btn" id="find">
                       <span class="fas fa-map-marker-alt">My Location</span>
                   </button> --}}
-                  <button type="button" class="btn mt-3" id="search">
-                      <span class="fas fa-search">Search</span>
-                  </button>
-                  <button type="submit" class="btn mt-3" id="wish">
-                      <span class="fas fa-map-marked-alt">Wishlist</span>
-                  </button>
+                    <button type="button" class="btn mt-3" id="search">
+                        <span class="fas fa-search"> Search</span>
+                    </button>
+                    <button type="submit" class="btn mt-3" id="wish">
+                        <span class="fas fa-map-marked-alt"> Wishlist</span>
+                    </button>
                 </div>
             </form>
             {{!-- <div id="map">Location Map</div> --}}
         </panel>
     </div>
 
-<div id="results" class="hide">
-            <div class="jumbotron" id="infoDiv">
-                <h2>Get to know more about where you're traveling to</h2>
-            </div>
-        <div class="card">
-          <!-- card Heading for the retrieved articles box -->
-          <div class="card-header">
-            <strong><i class="fa fa-table"></i> Location Overview</strong>
-          </div>
+    <div id="results" class="hide">
+        <div class="info" id="infoDiv">
+            {{!-- <h2>Get to know more about where you're traveling to</h2> --}}
         </div>
-          <!-- This main card will hold each of the resulting articles -->
-          <div class="card-body" id="location-section">
-          </div>
+        <div class="card">
+            <!-- card Heading for the retrieved articles box -->
+            <div class="card-header">
+                <strong><i class="fa fa-table"></i> Location Overview</strong>
+            </div>
+        </div>
+        <!-- This main card will hold each of the resulting articles -->
+        <div class="card-body" id="location-section">
+        </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
             <div class="card card-default">
-                <div class="card-header" id="leftside"><strong>Travel Wishlist</strong>
-                {{!-- <p>Send order when you're ready</p> --}}
+                <div class="card-header" id="leftside"><strong>My Travel Wishlist</strong>
+                    {{!-- <p>Send order when you're ready</p> --}}
                 </div>
-                
+
                 <div class="card-body">
 
                     <ul>
@@ -53,8 +55,9 @@
                         {{#unless travelled}}
 
                         <span><strong> {{this.id}} - {{this.destination_name}}</strong></span>
-                        <button type="button" class="destination-btn btn-warning" id="destinationbtn" data-id="{{this.id}}"
-                            data-newTravelled="{{travel}}"><span class="fas fa-passport"></span></button>
+                        <button type="button" class="destination-btn btn-warning" id="destinationbtn"
+                            data-id="{{this.id}}" data-newTravelled="{{travel}}"><span
+                                class="fas fa-passport"></span></button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -63,11 +66,11 @@
                 </div>
             </div>
         </div>
-    <div class="col-sm-6">
+        <div class="col-sm-6">
             <div class="card card-default">
                 <div class="card-header" id="rightside"><strong>My Travel Journal</strong>
                 </div>
-            
+
                 <div class="card-body">
 
                     <ul>
@@ -87,5 +90,5 @@
 
     </div>
     <!--endrow -->
-    </div>
-    <!--enccontainer -->
+</div>
+<!--enccontainer -->
