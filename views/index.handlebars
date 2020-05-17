@@ -17,27 +17,59 @@
                     <button type="button" class="btn mt-3" id="search">
                         <span class="fas fa-search"> Search</span>
                     </button>
-                    <button type="submit" class="btn mt-3" id="wish">
+                    {{!-- <button type="submit" class="btn mt-3" id="wish">
                         <span class="fas fa-map-marked-alt"> Wishlist</span>
-                    </button>
+                    </button> --}}
                 </div>
             </form>
             {{!-- <div id="map">Location Map</div> --}}
         </panel>
     </div>
 
-    <div id="results" class="hide">
-        <div class="info" id="infoDiv">
-            {{!-- <h2>Get to know more about where you're traveling to</h2> --}}
-        </div>
-        <div class="card">
-            <!-- card Heading for the retrieved articles box -->
-            <div class="card-header">
-                <strong><i class="fa fa-table"></i> Location Overview</strong>
-            </div>
-        </div>
-        <!-- This main card will hold each of the resulting articles -->
-        <div class="card-body" id="location-section">
+{{!-- Appending Info from API --}}
+    <div class="hide" id="results">
+        <div class="mb-4 card">
+            <h5 class="card-header">
+                Destination Information
+            </h5>
+                <div class="mb-1 card-body"><h3 class="card-title" id="city"></h5>
+                        <div class="row">
+                            <div class="col">
+                                <div class="bs-example">
+                                    <ul class="nav nav-tabs" id="myTab">
+                                        <li class="nav-item">
+                                            <a href="#home" class="nav-link" data-toggle="tab">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#profile" class="nav-link" data-toggle="tab">Sightseeing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#messages" class="nav-link" data-toggle="tab">Images</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade" id="home">
+                                            <p class="mt-2"></p>
+                                                <div class="col-md-auto image-wrapper float-right pl-3" id="image-display">
+                           {{!-- This is where the thumbnail images will display --}}
+                                                </div>  
+                                        </div>
+                                        <div class="tab-pane fade" id="profile">
+                                            <h4 class="mt-2">Places to Visit</h4>
+                                            
+                                        </div>
+                                        <div class="tab-pane fade" id="messages">
+                                            <h4 class="mt-2">Photos of Popular Sights</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                        <button type="submit" class="btn mt-3" id="wish">
+                        <span class="fas fa-map-marked-alt"> Wishlist</span>
+                    </button>
+                </div>
         </div>
     </div>
 

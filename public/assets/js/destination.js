@@ -51,35 +51,33 @@ $(function() {
     }).then(location.reload());
   });
 });
-/**
- * pulls information from the form and build the query URL
- * @returns {string} URL for NYT API based on form inputs
- */
- 
+
+//inserted for location description table
+$(document).ready(function(){ 
+  $("#myTab li:eq(0) a").tab('show'); // show 2nd tab on page load
+});
+// $("#results").empty();
 $("#search").click(function(event) {
-  $("#infoDiv").empty();
+  
   console.log($("#select").attr("id"));
   $('#results').addClass('show');
-  event.preventDefault();
-  var entry = $("#search_term").val().split(",")[0].split(" ");
-  var result = [];
-    for (var i = 0; i < entry.length; i++) {
-      var value = entry[i].charAt(0).toUpperCase() + entry[i].slice(1)
-      result.push(value);
-      console.log(value);
-    }; 
-  var city = result.join("_");
+    event.preventDefault();
+    var entry = $("#search_term").val().split(",")[0].split(" ");
+    var result = [];
+      for (var i = 0; i < entry.length; i++) {
+        var value = entry[i].charAt(0).toUpperCase() + entry[i].slice(1)
+        result.push(value);
+        console.log(value);
+      }; 
+    var city = result.join("_");
   // .split(",")[0];
     // console.log(entry);
   // var city = entry.charAt(0).toUpperCase() + entry.slice(1);
   // console.log(city)
   if (city) {
     var queryURL = "https://www.triposo.com/api/20200405/poi.json?location_id="+city+"&count=10&fields=id,name,images,score,snippet&account=ORID4DVT&fields=all&token=9mzqr3x3hr2juisyaz7mfqmsezfooz85";
+    var poiURL = "https://www.triposo.com/api/20200405/poi.json?location_id="+city+"&tag_labels=sightseeing&order_by=-score&count=10&account=ORID4DVT&fields=all&token=9mzqr3x3hr2juisyaz7mfqmsezfooz85"
   }
-/**
- * takes API data (JSON/object) and turns it into elements on the page
- * @param {object} TripData - object containing API data
- */
 $.ajax({
    url: queryURL,
    method: "GET",
@@ -88,16 +86,43 @@ $.ajax({
      console.log(json);
      console.log(json.results[0].snippet);
     //  console.log(json.response[0].snippet);
-       var location = json.results[0].snippet;
+      //  var city = input;
+       var snippet = json.results[0].snippet;
        var imageURL = json.results[0].images[0].sizes.thumbnail.url;
-      //  var snippet = $('<h3>').text(location);
-       var d = $("<div>");
+       var sectionBody = json.results[0].content.sections[0].body;
+       var d = $("<li>");
+       var h = $("<h3>");
+       var p = $("<p>");
+       var g = $("<p>");
        var image = $("<img>").attr("src", imageURL);
-       d.append(location);
-       d.append(image);
-       $("#infoDiv").append(d);
+      // var image = $("<img style='float:right'"). attr("src", imageURL); 
+       p.append(snippet);
+       $("#home").append(p);
+       d.append(sectionBody);
+       $("#profile").append(d);
+       g.append(image);
+       $("#image-display").append(g);
+       h.append(city);
+       $("#city").append(h);
            
  });
+ $.ajax({
+  url: poiURL,
+  method: "GET",
+  dataType: "json"
+}).then(function(json) {
+    console.log(json);
+    console.log(json.results[0]);
+   //  console.log(json.response[0].snippet);
+     //  var city = input;
+      var name = json.results[0].name;
+      var p = $("<p>");
+    //   var image = $("<img>").attr("src", imageURL);
+      p.append(name);
+      $("#messages").append(p);
+});
+// $("#results").empty();
+// location.reload();
 });
 // }).then(response => {
 //   console.log(response);
