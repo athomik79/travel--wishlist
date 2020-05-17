@@ -1,6 +1,10 @@
+
+  // document.getElementById("results").style.display = "none";
+
 // Autocomplete Search Function
 function activatePlacesSearch(){
   var input = document.getElementById('search_term');
+  console.log(input);
   var autocomplete = new google.maps.places.Autocomplete(input);
   }
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
@@ -52,6 +56,8 @@ $(function() {
   });
 });
 
+
+
 //inserted for location description table
 $(document).ready(function(){ 
   $("#myTab li:eq(0) a").tab('show'); // show 2nd tab on page load
@@ -60,7 +66,12 @@ $(document).ready(function(){
 $("#search").click(function(event) {
   
   console.log($("#select").attr("id"));
-  $('#results').addClass('show');
+
+
+  // $('#results').addClass('show');
+  
+  document.getElementById("results").style.display = "block";
+ 
     event.preventDefault();
     var entry = $("#search_term").val().split(",")[0].split(" ");
     var result = [];
@@ -120,9 +131,11 @@ $.ajax({
     //   var image = $("<img>").attr("src", imageURL);
       p.append(name);
       $("#messages").append(p);
+      
 });
-// $("#results").empty();
-// location.reload();
+
+// document.getElementById("search_term").value = "";
+
 });
 // }).then(response => {
 //   console.log(response);
