@@ -7,8 +7,8 @@
         <panel>
             <form class="create-form">
                 <div class="form-group">
-                  {{!-- <label for="newburger">Choose a Destination</label> --}}
-                  <input data-placeholder="Search a Destination" id="search_term" class="form-control mt-3" name="burger">
+                  <label for="newdestination">Choose a Destination</label>
+                  <input data-placeholder="Search a Destination" id="search_term" class="form-control mt-3" name="destination">
                   {{!-- <button type="submit" class="btn" id="find">
                       <span class="fas fa-map-marker-alt">My Location</span>
                   </button> --}}
@@ -49,12 +49,12 @@
                 <div class="card-body">
 
                     <ul>
-                        {{#each burgers}}
-                        {{#unless devoured}}
+                        {{#each destinations}}
+                        {{#unless travelled}}
 
-                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fas fa-passport"></span></button>
+                        <span><strong> {{this.id}} - {{this.destination_name}}</strong></span>
+                        <button type="button" class="destination-btn btn-warning" id="destinationbtn" data-id="{{this.id}}"
+                            data-newTravelled="{{travel}}"><span class="fas fa-passport"></span></button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -66,17 +66,16 @@
     <div class="col-sm-6">
             <div class="card card-default">
                 <div class="card-header" id="rightside"><strong>My Travel Journal</strong>
-                {{!-- <p>Eat your Burger!</p> --}}
                 </div>
             
                 <div class="card-body">
 
                     <ul>
-                        {{#each burgers}}
-                        {{#if devoured}}
-                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="trashburger btn" id="trashbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fas fa-suitcase"></span></button>
+                        {{#each destinations}}
+                        {{#if travelled}}
+                        <span><strong> {{this.id}} - {{this.destination_name}}</strong></span>
+                        <button type="button" class="trashdestination btn" id="trashbutton" data-id="{{this.id}}"
+                            data-newTravelled="{{travel}}"><span class="fas fa-suitcase"></span></button>
                         <hr>
                         {{/if}}
                         {{/each}}

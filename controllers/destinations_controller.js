@@ -1,38 +1,38 @@
 var express = require("express");
-// Import the model (burger.js) to use its database functions.
-var burger = require("../models/burger.js");
+// Import the model (destination.js) to use its database functions.
+var destination = require("../models/destination.js");
 var router = express.Router();
 
 // router connections
 
 // get router
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+    destination.selectAll(function(data) {
         var hbsObj = {
-            burgers: data
+            destinations: data
         };
         console.log(hbsObj);
         res.render("index", hbsObj);
     });
 
 // post router
-router.post("/api/burgers", function(req, res) {
-    burger.insertOne(
-        ["burger_name", "devoured"],
-        [req.body.burger_name, req.body.devoured],
+router.post("/api/destinations", function(req, res) {
+    destination.insertOne(
+        ["destination_name", "travelled"],
+        [req.body.destination_name, req.body.travelled],
         function(result) {
-            // send back ID of new burger
+            // send back ID of new destination
             res.json({ id: result.insertId });
         }
       );
     });
 
 // put router
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/destinations/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
-    burger.updateOne({ devoured: req.body.devoured }, condition, function(
+    destination.updateOne({ travelled: req.body.travelled }, condition, function(
       result
     ) {
       if (result.changedRows === 0) {
@@ -44,11 +44,11 @@ router.put("/api/burgers/:id", function(req, res) {
   });
 
 // delete router
-router.delete("/api/burgers/:id", function(req, res) {
+router.delete("/api/destinations/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
-    burger.deleteOne(condition, function(result) {
+    destination.deleteOne(condition, function(result) {
         if (result.changedRows === 0) {
             return res.status(404).end();
         } else {

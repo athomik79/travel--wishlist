@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     user: "root",
     password: "Cal_mel@1013",
-    database: "burgers_db"
+    database: "destinations_db"
   });
 }
 

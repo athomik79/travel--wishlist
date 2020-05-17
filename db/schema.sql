@@ -1,9 +1,10 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE destinations_db;
+USE destinations_db;
 
-CREATE TABLE burgers(
+CREATE TABLE destinations(
     id INT NOT NULL AUTO_INCREMENT,
-    burger_name VARCHAR(50) NOT NULL,
-    devoured BOOLEAN DEFAULT false,
+    destination_name VARCHAR(50) NOT NULL,
+    travelled BOOLEAN DEFAULT false,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     PRIMARY KEY (id)
 );
