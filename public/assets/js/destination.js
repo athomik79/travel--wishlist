@@ -1,5 +1,5 @@
 
-  // document.getElementById("results").style.display = "none";
+  document.getElementById("results").style.display = "none";
 
 // Autocomplete Search Function
 function activatePlacesSearch(){
@@ -137,6 +137,8 @@ $.ajax({
 // document.getElementById("search_term").value = "";
 
 });
+document.getElementById("search_term").value = "";
+
 // }).then(response => {
 //   console.log(response);
 // });
