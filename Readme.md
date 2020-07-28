@@ -1,4 +1,5 @@
 # Eat Da Burger APP
+A test repository created to share an application with new contributors
 
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
 
