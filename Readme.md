@@ -1,46 +1,58 @@
-# Eat Da Burger APP
-A test repository created to share an application with new contributors
+# Travel Wishlist
+
 
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
 
+## Contributors:
+
+### athomik79
 <img src="https://avatars.githubusercontent.com/u/55367871?" height="60px" width="60px">
 
-### Username:
+### mtgovern
+<img src="https://avatars1.githubusercontent.com/u/38888185?" height="60px" width="60px">
 
-athomik79
+### Oyuka100
+<img src="https://avatars0.githubusercontent.com/u/58796152?" height="60px" width="60px">
+
+### rfazily
+<img src="https://avatars0.githubusercontent.com/u/59346425?" height="60px" width="60px">
+
+
 
 ### Project Title:
 
-Eat-Da-Burger
-
-![Eat Da Burger](https://github.com/athomik79/Eat-Da-Burger/blob/master/public/assets/img/eat_da_burger.png)
+Travel Wishlist
 
 ### Description:
 
-Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+We have created a travel planning app that allows a user to search a desired city they would like to visit, and add it to a ‘travel wish list’ or an ‘already visited list’. 
 
 ### Installation:
 
-Run in command line with full directory using: `node server.js`
-
-Here's a link to the deployed app:
-[Link to Eat Da Burger App](https://hidden-spire-81956.herokuapp.com/)
+Here's a link to the deployed app: 
+[Link to Travel Wishlist App](https://pure-mountain-23490.herokuapp.com/)
 
 ### Usage:
 
-Choose a burger to add to your order from the dropdown menu. Click the thumbs up button to add the burger to your order. Once you have added the burgers to your order, you can request your order and munch away by hitting the eat button.
+Use the search bar to search for a city. When you click the 'Search' button, results will appear in the destination information area for this city if they are available. If you would like to add the city to your wishlist, click the 'Add to Wishlist' button. Once you have visited a city from your wishlist, you can add it to your travel journal, by clicking the 'Passport' button.
+
+### Future Improvements:
+* Add additional APIs:
+    * Ticketing/booking information
+    * Things to do/Tours
+    * Hotels and Accomodations
+* Print/Save Trip and Travel Journal Lists:
+    * Share lists on Social Media
+    * Link to display location information from wishlist
+* User authentication
 
 ### License:
 
 MIT
 
-### Contributing:
-
-athomik79
-
 ### Tests:
 
-n/a
+This build was tested using Travis-CI
 
 ### Questions:
 
